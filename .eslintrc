@@ -1,0 +1,67 @@
+{
+  "extends": "airbnb",
+  //  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "rules": {
+    "import/extensions": [
+      2,
+      "always"
+    ],
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "max-len": [
+      "warn",
+      120
+    ],
+    "no-undef": [
+      "warn"
+    ],
+    "no-restricted-syntax": [
+      "warn"
+    ],
+    "prefer-const": [
+      "warn"
+    ],
+    "strict": "off",
+    "radix": [
+      "error",
+      "as-needed"
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "no-param-reassign": [
+      "warn"
+    ],
+    "no-return-assign": [
+      "warn"
+    ],
+    "prefer-template": [
+      "warn"
+    ],
+    "no-mixed-operators": [
+      "error",
+      {
+        "allowSamePrecedence": true
+      }
+    ]
+  },
+  "globals": {
+    "d3": false,
+    "Immutable": false,
+    "moment": false
+  }
+}

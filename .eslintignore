@@ -1,0 +1,3 @@
+docs/js/vendor/*.js
+docs/js/data/*.js
+docs/js/exported-data.js

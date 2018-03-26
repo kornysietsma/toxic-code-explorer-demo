@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/normalize.css"/>
+  <link rel="stylesheet" href="css/custom.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <script src="js/vendor/es6detect.js"></script>
+  <script src="js/vendor/d3.js"></script>
+  <script src="js/vendor/moment.min.js"></script>
+  <script src="js/vendor/immutable.min.js"></script>
+</head>
+<body class="chart">
+  <header class="chart__header">
+    <h1 id="chart_title">Toxic Code Explorer</h1>
+  </header>
+  <main class="chart__chart" id="chart_parent">
+    <div id="old_browser_warning">
+      Loading data...  If this message does not go away, you might have an old browser. Or you've found a bug!
+    </div>
+    <!-- the chart goes here -->
+  </main>
+  <aside class="chart__controls">
+    <select id="project">
+    </select>
+    <button class="zoomer" id="home_zoom" data-path="" style="display:none">Zoom to home</button>
+    <label id="controls">
+    <p>Tile colour:</p>
+    <select id="strategy">
+        <option selected>language</option>
+        <option value="loc">lines of code</option>
+        <option>age</option>
+        <option>authors</option>
+        <option value="average_indent">average indent</option>
+        <option value="worst_indent">worst indent</option>
+    </select>
+    </label>
+  </aside>
+  <aside class="chart__inspect" id="inspector"><!-- inspector --></aside>
+  <script src="js/chart.js" type="module"></script>
+</body>

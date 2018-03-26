@@ -1,0 +1,39 @@
+body {
+  color: #d6d3d7;
+  background-color: #000018;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 1.6em;
+  font-weight: 300;
+  letter-spacing: .01em;
+  line-height: 1.6;
+}
+
+.chart__header {
+  text-align: center;
+}
+
+.chart__header h1 {
+  font-size: 2.0rem;
+}
+
+.chart__chart {
+  background-color: #010e35;
+}
+.chart__controls {
+  background-color: #010e35;
+}
+.chart__inspect {
+  background-color: #010e35;
+  font-size: 0.75em;
+}
+
+.chart__footer {
+  font-size: 0.5em;
+}
+button.zoomer {
+  font-size: 0.75em;
+}
+
+a.node_link {
+  color: #a0a0a0;
+}
