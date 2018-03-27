@@ -1,5 +1,7 @@
 # Toxic code explorer demo
 
+Click [here](https://kornysietsma.github.io/toxic-code-explorer-demo/) to see the live demo!
+
 A fairly simple treemap to view simple language-agnostic code metrics:
 
 - Lines of code
