@@ -413,15 +413,6 @@ const strategies = buildColourStrategies(chartConfig, languageColours);
 
 const projectEl = document.getElementById('project');
 
-Object.entries(allData)
-    .sort(([p1, _d1], [p2, _d2]) => p1.localeCompare(p2))
-    .forEach(([project, data]) => {
-        addPaths(data.rawData, null);
-        const selectedText = (project === 'verify') ? ' selected' : '';
-        projectEl.insertAdjacentHTML('beforeEnd',
-          `<option value="${project}"${selectedText}>${data.chartTitle}</option>`);
-    });
-
 // ugly choices - currently this is global. Can we make it not global?
 // all the DOM it references is global.
 // maybe just name it "uglyGlobalChartState"
@@ -435,6 +426,16 @@ const globalChartState = {
     currentStrategyName: 'language',
     currentStrategy: strategies.language,
 };
+
+Object.entries(allData)
+    .sort(([p1, _d1], [p2, _d2]) => p1.localeCompare(p2))
+    .forEach(([project, data]) => {
+        addPaths(data.rawData, null);
+        const selectedText = (project === globalChartState.selectedChartName) ? ' selected="true"' : '';
+        projectEl.insertAdjacentHTML('beforeEnd',
+          `<option value="${project}"${selectedText}>${data.chartTitle}</option>`);
+    });
+
 
 function refresh() {
     const chartTitle = globalChartState.rootNodePath.length === 0
