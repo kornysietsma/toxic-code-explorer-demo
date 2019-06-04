@@ -74,8 +74,8 @@ function countLanguagesIn(data) {
 
 function buildLanguageColours(languageCounts) {
     const languagesWithColours = Immutable.fromJS(Object.entries(languageCounts))
-    .sortBy(([_k, v]) => -v)
-    .map(([k, v], ix) => [k, Immutable.Map({ count: v, colour: d3.schemeCategory20[ix <= 19 ? ix : 19] })]);
+        .sortBy(([_k, v]) => -v)
+        .map(([k, v], ix) => [k, Immutable.Map({ count: v, colour: d3.schemeCategory20[ix <= 19 ? ix : 19] })]);
     return Immutable.Map(languagesWithColours);
 }
 
@@ -229,7 +229,7 @@ function nodeHtmlDetails(urlPrefix, node) {
         const link = nodeLink(urlPrefix, pathSoFar.join('/'), name);
         return `<button class="zoomer" data-path="${pathSoFar.join('/')}">-></button> ${link}`;
     })
-      .join('<br/>');
+        .join('<br/>');
 
     const age = ageMonthsDataFn(node);
     const ageHtml = age === undefined ? '' : `<p>${age} months since changed</p>`;
@@ -325,8 +325,8 @@ function updateChart(config, elements, state, selectNodeCallback) {
     const rootHierarchy = buildHierarchy(rootNode);
 
     const treemap = d3.treemap()
-                   .size([config.displayWidth * config.displayPixelRatio, config.displayHeight * config.displayPixelRatio])
-                   .paddingOuter(paddingOuterFn).paddingInner(paddingInnerFn);
+        .size([config.displayWidth * config.displayPixelRatio, config.displayHeight * config.displayPixelRatio])
+        .paddingOuter(paddingOuterFn).paddingInner(paddingInnerFn);
 
     treemap(rootHierarchy);
 
@@ -340,10 +340,10 @@ function updateChart(config, elements, state, selectNodeCallback) {
         .attr('class', 'node');
 
     nodes.merge(newNodes)
-        .style('x', n => `${n.x0}px`)
-        .style('y', n => `${n.y0}px`)
-        .style('width', n => `${n.x1 - n.x0}px`)
-        .style('height', n => `${n.y1 - n.y0}px`)
+        .attr('x', n => `${n.x0}px`)
+        .attr('y', n => `${n.y0}px`)
+        .attr('width', n => `${n.x1 - n.x0}px`)
+        .attr('height', n => `${n.y1 - n.y0}px`)
         .style('fill', state.currentStrategy.fillFn)
         .style('stroke', state.currentStrategy.strokeFn)
         .style('stroke-width', strokeWidthFn)
@@ -351,7 +351,7 @@ function updateChart(config, elements, state, selectNodeCallback) {
         .on('mouseover', (d, i, nodes2) => d3.select(nodes2[i]).style('stroke', d3.rgb('yellow')))
         .on('mouseout', (d, i, nodes2) => d3.select(nodes2[i]).style('stroke', state.currentStrategy.strokeFn))
         .append('svg:title')
-          .text(n => n.data.path);
+        .text(n => n.data.path);
 
     nodes
         .exit()
@@ -397,9 +397,9 @@ function onNodeClickedFn(config, chartState, refreshFn) {
         inspector.innerHTML = nodeHtmlDetails(chartState.selectedChart.urlPrefix, node);
 
         inspector.querySelectorAll('button.zoomer')
-        .forEach((el) => {
-            el.addEventListener('click', onZoomButtonClickedFn(chartState, el, refreshFn));
-        });
+            .forEach((el) => {
+                el.addEventListener('click', onZoomButtonClickedFn(chartState, el, refreshFn));
+            });
     };
 }
 /* eslint-enable no-param-reassign */
@@ -433,7 +433,7 @@ Object.entries(allData)
         addPaths(data.rawData, null);
         const selectedText = (project === globalChartState.selectedChartName) ? ' selected="true"' : '';
         projectEl.insertAdjacentHTML('beforeEnd',
-          `<option value="${project}"${selectedText}>${data.chartTitle}</option>`);
+            `<option value="${project}"${selectedText}>${data.chartTitle}</option>`);
     });
 
 
