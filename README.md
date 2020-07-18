@@ -1,3 +1,5 @@
+**ARCHIVED** this is part of my older code tools - see https://kornysietsma.github.io/polyglot-tools-docs/ for latest stuff.
+
 # Toxic code explorer demo
 
 Click [here](https://kornysietsma.github.io/toxic-code-explorer-demo/) to see the live demo!
